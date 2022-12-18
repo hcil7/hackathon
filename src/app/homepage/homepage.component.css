@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Poppins";
+  src: "assets/Poppins-Regular.ttf";
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap");
+h1 {
+  font-family: Poppins, "Helvetica Neue", sans-serif;
+  font-size: 18px;
+}
+.margin-top-100 {
+  margin-top: 50px;
+}
+.homePageSearch {
+  background-color: #3a3f47;
+  color: #67686d;
+  padding: 11px 0px 10px 24.7px;
+  outline: none;
+  border: none;
+  width: 300px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  font-size: 14px;
+}
+.homePageSearchButton {
+  background-color: #3a3f47;
+  color: #67686d;
+  border: none;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding-right: 17.78px;
+  padding-top: 11px;
+}
+
+.homePageMainImageLeft {
+  margin-top: 21px;
+  position: relative;
+  overflow: hidden;
+}
+.homePageMainImageRight {
+  position: relative;
+  margin-left: 30.18px;
+  margin-top: 21px;
+}
+.homePageMainImageLeft img,
+.homePageMainImageRight img {
+  width: 144.61px;
+  height: 210px;
+  border-radius: 16px;
+}
+.homePageMainImageLeft img:hover,
+.homePageMainImageRight img:hover {
+  cursor: pointer;
+}
+.homePageMainNumberLeft {
+  position: absolute;
+  color: #242a32;
+  text-shadow: -0.5px 0 #0296e5, 0 0.5px #0296e5, 0.5px 0 #0296e5,
+    0 -0.5px #0296e5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 96px;
+  top: 150px;
+  left: 10px;
+  z-index: 9999;
+}
+.homePageMainNumberRight {
+  position: absolute;
+  color: #242a32;
+  text-shadow: -0.5px 0 #0296e5, 0 0.5px #0296e5, 0.5px 0 #0296e5,
+    0 -0.5px #0296e5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 96px;
+  top: 190px;
+  right: 105px;
+}
+.homePageTabs {
+  font-family: Poppins, "Helvetica Neue", sans-serif !important;
+}
+.mat-tab-header {
+  white-space: nowrap;
+  overflow: auto;
+}
+::ng-deep .mat-tab-header-pagination {
+  display: none !important;
+}
+::ng-deep .mat-tab-label,
+::ng-deep .mat-tab-link {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 1 !important;
+  font-family: Poppins, "Helvetica Neue", sans-serif !important;
+}
+::ng-deep .mat-tab-nav-bar,
+::ng-deep .mat-tab-header {
+  border-bottom: none !important;
+}
+
+::ng-deep.mat-tab-list {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #3a3f47;
+}
+::ng-deep .mat-ink-bar {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: absolute;
+  bottom: 0;
+  height: 4px !important;
+  transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.homePageBottom:nth-child(1) {
+  margin-left: 0px;
+}
+.homePageBottom {
+  background-position: center;
+  margin-left: 13px;
+  margin-top: 18.08px;
+}
+.homePageBottom img {
+  width: 100px;
+  height: 145.92px;
+  border-radius: 16px;
+}
+
+.footer {
+  position: sticky;
+  z-index: 2;
+  bottom: 0px;
+  height: 78px;
+
+  background-color: #242a32;
+  border-top: 1px solid #0296e5;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+}
+.footer-icons {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-icons {
+  color: #67686d;
+}
+.footer-icons-active {
+  color: #0296e5;
+}
+::ng-deep.carousel-arrow-next,
+::ng-deep.carousel-arrow-prev {
+  display: none !important;
+}

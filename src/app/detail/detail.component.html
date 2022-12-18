@@ -1,0 +1,79 @@
+<div class="container d-flex justify-content-between mt-2" style="width: 400px">
+  <mat-icon
+    aria-hidden="false"
+    fontIcon="chevron_left"
+    routerLink="/"
+  ></mat-icon>
+  <h1>Detail</h1>
+  <mat-icon aria-hidden="false" fontIcon="bookmark"></mat-icon>
+</div>
+
+<div
+  class="d-flex justify-content-center flex-column align-items-center mt-2"
+  style="position: relative"
+>
+  <div class="detail-banner">
+    <img
+      [src]="'http://image.tmdb.org/t/p/w500/' + responseMovie?.backdrop_path"
+    />
+    <div class="detail-banner-small">
+      <img
+        [src]="'http://image.tmdb.org/t/p/w500/' + responseMovie?.poster_path"
+      />
+    </div>
+    <div class="mt-2 detail-title">
+      {{ responseMovie?.title }}
+    </div>
+  </div>
+</div>
+
+<div
+  class="d-flex justify-content-center align-items-center detailInfo detailInfoMarginTop"
+>
+  <span class="d-flex align-items-center margin-lr"
+    ><mat-icon aria-hidden="false" fontIcon="calendar_month"></mat-icon
+  ></span>
+  <span style="margin: 0px 5px">{{
+    responseMovie?.release_date | date : "yyyy"
+  }}</span>
+  <span class="margin-lr"> | </span>
+  <span class="d-flex align-items-center margin-lr"
+    ><mat-icon aria-hidden="false" fontIcon="schedule"></mat-icon
+  ></span>
+  <span class="margin-lr">xxx Minutes </span> <span class="margin-lr"> | </span>
+  <span class="d-flex align-items-center margin-lr"
+    ><mat-icon aria-hidden="false" fontIcon="confirmation_number"></mat-icon
+  ></span>
+  <span class="margin-lr">{{ responseMovie?.genres[0].name }}</span>
+</div>
+
+<div class="d-flex justify-content-center margin-top-30">
+  <mat-tab-group class="homePageTabs">
+    <mat-tab label="About Movie">
+      <div class="mt-4" style="width: 374px">
+        {{ responseMovie?.overview }}
+      </div>
+    </mat-tab>
+    <mat-tab label="Reviews">
+      <div
+        class="d-flex mt-4"
+        *ngFor="let response of responseReviews"
+        style="width: 374px"
+      >
+        <div class="reviewLeft d-flex flex-column">
+          <img src="assets/profile.png" />
+          <span
+            class="mt-2 d-flex justify-content-center"
+            style="color: #0296e5"
+            >{{ response.author_details.rating }}</span
+          >
+        </div>
+        <div class="reviewRight d-flex flex-column">
+          <span>{{ response.author }}</span>
+          <span>{{ response.content }}</span>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Cast"> Cast Goes Here</mat-tab>
+  </mat-tab-group>
+</div>

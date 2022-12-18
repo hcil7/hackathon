@@ -1,0 +1,77 @@
+<div class="container d-flex justify-content-between mt-2" style="width: 400px">
+  <mat-icon
+    aria-hidden="false"
+    fontIcon="chevron_left"
+    routerLink="/"
+  ></mat-icon>
+  <h1>Search</h1>
+  <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+</div>
+<div
+  *ngIf="!isResponseNull"
+  class="container d-flex justify-content-center flex-wrap"
+  style="width: 375px"
+>
+  <div
+    class="d-flex flex-row mt-4"
+    *ngFor="let movie of searchedMovie"
+    style="width: 100%"
+  >
+    <div class="searchImage">
+      <img
+        [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+        [routerLink]="'/movie/' + movie.id"
+      />
+    </div>
+    <div class="movieInfo d-flex flex-column">
+      <span
+        class="routerLinkHover"
+        style="font-size: 16px"
+        [routerLink]="'/movie/' + movie.id"
+      >
+        {{ movie.title }}</span
+      >
+      <span class="d-flex align-items-center" style="color: #ff8700"
+        ><mat-icon aria-hidden="false" fontIcon="grade"></mat-icon>
+        {{ movie.vote_average }}</span
+      >
+      <span class="d-flex align-items-center"
+        ><mat-icon
+          aria-hidden="false"
+          fontIcon="confirmation_number"
+        ></mat-icon>
+        Genre</span
+      >
+
+      <span class="d-flex align-items-center"
+        ><mat-icon aria-hidden="false" fontIcon="schedule"></mat-icon>
+        {{ movie.release_date | date : "yyyy" }}</span
+      >
+    </div>
+  </div>
+</div>
+<div
+  *ngIf="isResponseNull"
+  class="container d-flex justify-content-center mt-150"
+>
+  <div class="d-flex flex-column align-items-center text-center">
+    <img src="assets/cant-found.png" class="notFoundImg" />
+    <span class="mt-3 cant-found-heading"
+      >We Are Sorry, We Can<br />Not Find The Movie :(</span
+    >
+    <span class="mt-2 cant-found-heading-smaller text-center"
+      >Find your movie by Type title,<br />categories, years, etc</span
+    >
+  </div>
+</div>
+<div class="footer d-flex justify-content-around align-items-center">
+  <div class="footer-icons">
+    <mat-icon aria-hidden="false" fontIcon="home"></mat-icon> Home
+  </div>
+  <div class="footer-icons footer-icons-active">
+    <mat-icon aria-hidden="false" fontIcon="search"></mat-icon> Search
+  </div>
+  <div class="footer-icons">
+    <mat-icon aria-hidden="false" fontIcon="bookmark"></mat-icon> Watch List
+  </div>
+</div>

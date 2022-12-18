@@ -1,0 +1,98 @@
+<div class="container d-flex justify-content-center mt-1">
+  <h1>What do you want to watch?</h1>
+</div>
+
+<div class="container d-flex justify-content-center mt-1">
+  <input
+    type="text"
+    placeholder="Search"
+    class="homePageSearch"
+    (keyup.enter)="sendMovieName()"
+    [(ngModel)]="searchMovieInput"
+  /><button class="homePageSearchButton" (click)="sendMovieName()">
+    <mat-icon aria-hidden="false" fontIcon="search"></mat-icon>
+  </button>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <!-- <div
+    class="homePageMainImageLeft"
+    *ngFor="let movie of popular; let i = index"
+  >
+    <img
+      [src]="'http://image.tmdb.org/t/p/w500/' + movie?.poster_path"
+      [routerLink]="'/movie/' + movie?.id"
+    />
+    <div class="homePageMainNumberLeft">{{ i + 1 }}</div>
+  </div> -->
+
+  <carousel class="mt-4 homePageMainImageLeft" [cellWidth]="144">
+    <div
+      class="carousel-cell"
+      cellWidth="144"
+      *ngFor="let movie of popular; let i = index"
+    >
+      <img
+        [src]="'http://image.tmdb.org/t/p/w500/' + movie?.poster_path"
+        [routerLink]="'/movie/' + movie?.id"
+      />
+      <div class="homePageMainNumberLeft">{{ i + 1 }}</div>
+    </div>
+  </carousel>
+</div>
+
+<div class="d-flex justify-content-center margin-top-100">
+  <mat-tab-group class="homePageTabs">
+    <mat-tab label="Now Playing">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="homePageBottom" *ngFor="let movie of nowPlaying">
+          <img
+            [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+            [routerLink]="'/movie/' + movie.id"
+          />
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Upcoming">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="homePageBottom" *ngFor="let movie of popular">
+          <img
+            [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+            [routerLink]="'/movie/' + movie?.id"
+          />
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Top Rated">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="homePageBottom" *ngFor="let movie of topRated">
+          <img
+            [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+            [routerLink]="'/movie/' + movie?.id"
+          />
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Popular">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="homePageBottom" *ngFor="let movie of nowPlaying">
+          <img
+            [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+            [routerLink]="'/movie/' + movie?.id"
+          />
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div class="footer d-flex justify-content-around align-items-center">
+  <div class="footer-icons footer-icons-active">
+    <mat-icon aria-hidden="false" fontIcon="home"></mat-icon> Home
+  </div>
+  <div class="footer-icons">
+    <mat-icon aria-hidden="false" fontIcon="search"></mat-icon> Search
+  </div>
+  <div class="footer-icons">
+    <mat-icon aria-hidden="false" fontIcon="bookmark"></mat-icon> Watch List
+  </div>
+</div>

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Poppins";
+  src: "assets/Poppins-Regular.ttf";
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap");
+
+h1 {
+  font-family: Poppins, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+.detail-banner {
+  position: relative;
+  width: 375px;
+  height: 210.94px;
+  display: flex;
+  justify-content: center;
+}
+.detail-banner img {
+  width: 375px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.detail-banner-small {
+  position: absolute;
+  top: 70%;
+  left: 29px;
+}
+
+.detail-banner-small img {
+  width: 95px;
+  height: 120px;
+  background-position: center;
+  border-radius: 16px;
+}
+.detailInfo {
+  color: #92929d;
+  font-size: 12px;
+}
+.detailInfoMarginTop {
+  margin-top: 75px;
+}
+.margin-lr {
+  margin: 0px 5px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+}
+::ng-deep .mat-tab-label,
+::ng-deep .mat-tab-link {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 1 !important;
+  font-family: Poppins, "Helvetica Neue", sans-serif !important;
+}
+::ng-deep .mat-tab-nav-bar,
+::ng-deep .mat-tab-header {
+  border-bottom: none !important;
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #3a3f47;
+}
+::ng-deep .mat-ink-bar {
+  position: absolute;
+  bottom: 0;
+  height: 4px !important;
+  transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+.homePageTabs {
+  font-family: Poppins, "Helvetica Neue", sans-serif !important;
+}
+.reviewLeft img {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+}
+.reviewRight {
+  margin-left: 12px;
+}
+.detail-title {
+  position: absolute;
+  bottom: -30px;
+  left: 136px;
+}
